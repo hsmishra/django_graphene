@@ -7,6 +7,7 @@ import app.schema
 
 class AuthMutation(graphene.ObjectType):
     register = mutations.Register.Field()
+    verify_account = mutations.VerifyAccount.Field()
 
 class Query(app.schema.Query, UserQuery, MeQuery, graphene.ObjectType):
     pass
