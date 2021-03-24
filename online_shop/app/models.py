@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 from django.utils.translation import gettext as _
 
 
@@ -20,3 +21,10 @@ class Category(models.Model):
 
   def __str__(self):
     return self.name
+
+
+class CustomeUser(AbstractUser):
+  email = models.EmailField(max_length=200, blank=False, verbose_name=_("User Email"))
+
+  USERNAME_FIELD = 'username'
+  EMAIL_FIELD = 'email'
