@@ -13,6 +13,10 @@ class Product(models.Model):
   def __str__(self):
     return self.name
 
+  @property
+  def is_in_stock(self):
+    return self.in_stock
+
   def get_category(self):
       return "\n".join([p.name for p in self.category.all()])
 
