@@ -4,3 +4,7 @@ graphene==2.1.8
 graphene-django==2.15.0
 graphql-core==2.3.2
 graphql-relay==2.0.1
+pytest==6.2.2
+pytest-cov==2.11.1
+pytest-django==4.1.0
+
