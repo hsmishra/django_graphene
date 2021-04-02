@@ -10,14 +10,16 @@ In this application authentication and unittest cases are also covered.
 
 ### Getting Started ###
 
-* Right now there no other db are integrated with this application so we can go with default sqllite3
+* By default you can go with sqllite3
 
 
 ### Virtual Environment Setup ###
 
 * If you're on linux/mac OS then for creating virtual environment use "virtualenv -p python3 venv"
-* If you're on Windows OS then for creating virtual environment use "virtualenv python venv"
-* Move to virtualenv and activate its environment for linux "source venv\bin\activate" for windows "venv\Scripts\activate"
+* If you're on Windows OS then for creating virtual environment use "virtualenv venv"
+* How to activate virtual environment 
+        1) For linux "source venv\bin\activate"
+        2) For windows "venv\Scripts\activate"
 
 
 ### GitHub Repository Setup ###
