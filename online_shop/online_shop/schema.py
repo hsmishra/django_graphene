@@ -4,6 +4,8 @@ from graphql_auth.schema import UserQuery, MeQuery
 
 import app.schema
 
+from app.schemas import category_schema, product_schema
+
 
 class AuthMutation(graphene.ObjectType):
    register = mutations.Register.Field()
@@ -15,11 +17,11 @@ class AuthMutation(graphene.ObjectType):
    password_reset = mutations.PasswordReset.Field()
    password_change = mutations.PasswordChange.Field()
 
-class Query(app.schema.Query, UserQuery, MeQuery, graphene.ObjectType):
+class Query(product_schema.Query, category_schema.Query, UserQuery, MeQuery, graphene.ObjectType):
     pass
 
 
-class Mutation(app.schema.Mutation, AuthMutation,graphene.ObjectType):
+class Mutation(product_schema.Mutation, category_schema.Mutation, AuthMutation,graphene.ObjectType):
     pass
 
 
