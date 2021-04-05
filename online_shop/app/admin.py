@@ -1,7 +1,7 @@
-from django.contrib import admin
 from django.apps import apps
+from django.contrib import admin
 
-from .models import Category, Product, CustomeUser
+from .models import Category, CustomeUser, Product
 
 
 @admin.register(Category)

@@ -2,7 +2,7 @@ import graphene
 from graphene import Argument
 from graphene_django.types import DjangoObjectType
 
-from ..models import Product, Category
+from ..models import Category, Product
 
 
 class ProductType(DjangoObjectType):

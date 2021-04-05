@@ -1,6 +1,5 @@
 from django.test import RequestFactory
 from django.urls import reverse
-
 from mixer.backend.django import mixer
 
 from app.views import home
