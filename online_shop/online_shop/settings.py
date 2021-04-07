@@ -128,7 +128,7 @@ STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'app.CustomeUser'
 
 GRAPHENE = {
-    'SCHEMA': 'app.schema.schema',
+    'SCHEMA': 'app.schemas.schemas',
     'MIDDLEWARE': [
         'graphql_jwt.middleware.JSONWebTokenMiddleware',
     ],

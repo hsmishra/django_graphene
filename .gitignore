@@ -55,6 +55,7 @@ coverage.xml
 *.mo
 *.pot
 *.idea
+*../.idea/
 
 # Django stuff:
 *.log
