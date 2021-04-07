@@ -6,7 +6,7 @@ from django.template import loader
 def home(request):
     template = loader.get_template('home.html')
     context = {
-        'name':"Satyam Mishra",
+        'name': "Satyam Mishra",
         "email": "satyam@gmail.com",
         "address": "Bangalore",
     }

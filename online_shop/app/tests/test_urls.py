@@ -1,6 +1,7 @@
-import pytest
 from django.contrib.auth import get_user_model
 from django.urls import resolve, reverse
+
+import pytest
 
 from app.views import home
 

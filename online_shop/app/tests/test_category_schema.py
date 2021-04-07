@@ -1,53 +1,16 @@
-import pytest
 from django.test import TestCase
+
+import pytest
 from graphene.test import Client
 from mixer.backend.django import mixer
-from online_shop.schema import schema
 
 from app.models import Category
+from app.tests.schema_format import (category_list_query,
+                                     create_category_mutation,
+                                     single_category_query,
+                                     update_category_mutation)
+from online_shop.schema import schema
 
-category_list_query = """
-query{
-      allCategories{
-        name
-        id
-      }
-    }
-"""
-
-single_category_query = """
-
-    query{
-      category(id: 1) {
-        id
-        name
-      }
-    }
-
-"""
-
-create_category_mutation = """
-     mutation createCategory($name: String) {
-        createCategory(name: $name){
-            category{
-                name
-            }
-        }
-  }
-
-"""
-
-update_category_mutation = """
-    mutation updateCategory($name: String, $id: ID){
-        updateCategory(name: $name, id: $id)
-        {
-            category{
-                name
-                id
-            }
-        }
-    }
-"""
 
 @pytest.mark.django_db
 class TestCategory(TestCase):
@@ -80,11 +43,17 @@ class TestCategory(TestCase):
 
     # ======================= Test create category mutation=======================
     def test_update_category(self):
-        # breakpoint()
         payload = {"id": self.category.id, "name": "car"}
         response = self.client.execute(update_category_mutation, variables=payload)
-
         response_cat = response.get("data").get("updateCategory").get("category")
         name = response_cat.get("name")
         assert name == payload["name"]
         assert name != self.category.name
+
+    # ======================= Test create category mutation=======================
+    # def test_delete_category(self):
+    #     payload = {"id": self.category.id}
+    #     response = self.client.execute(delete_category_mutation, variables=payload)
+    #     delete_res = response.get("data").get("deleteCategory").get("category")
+    #     id = delete_res.get("id")
+    #     assert id == None
